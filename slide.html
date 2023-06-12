@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Range Slider with Specific Values</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .custom-slider {
+      width: 300px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var validValues = ['2016', '2018', '2019', '2020', '2021'];
+      var slider = $('#custom-slider');
+      var sliderValue = $('#slider-value');
+
+      // Set the initial value
+      var initialValue = validValues[0];
+      slider.val(initialValue);
+      sliderValue.text(initialValue);
+
+      // Update the selected value and display
+      slider.on('input', function() {
+        var value = $(this).val();
+        sliderValue.text(value);
+      });
+
+      // Restrict the selectable values
+      slider.on('input', function() {
+        var value = $(this).val();
+        if (!validValues.includes(value)) {
+          var closestValue = validValues.reduce(function(prev, curr) {
+            return (Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev);
+          });
+          $(this).val(closestValue);
+          sliderValue.text(closestValue);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container mt-4">
+    <input type="range" class="custom-range custom-slider" id="custom-slider" min="2016" max="2021" step="1">
+    <p class="mt-2">Selected Value: <span id="slider-value"></span></p>
+  </div>
+</body>
+</html>

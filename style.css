@@ -1,40 +1,57 @@
 html,
 body,
 #map {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #geocodeError {
-  position: absolute;
-  display: none;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 25px;
-  width: 250px;
-  height: 150px;
-  background: #fff;
-  border: 2px solid #000;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-align: center;
-  z-index: 2000;
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 25px;
+    width: 250px;
+    height: 150px;
+    background: #fff;
+    border: 2px solid #000;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    z-index: 2000;
 }
 
 #errorCloseBtn {
-  position: absolute;
-  padding: 8px;
-  top: 2px;
-  right: 4px;
-  font-weight: bold;
-  font-size: 0.96em;
+    position: absolute;
+    padding: 8px;
+    top: 2px;
+    right: 4px;
+    font-weight: bold;
+    font-size: 0.96em;
 }
 
 #errorText {
-  margin-top: 30px;
+    margin-top: 30px;
+}
+
+#left-panel{
+    position: absolute;
+    top:10px;
+    left: 10px;
+    min-height: 10px;
+    min-width: 10px;
+    max-width: 300px;
+    z-index: 1000;
+    border-radius: 5px;
+    background-color:#FBFAF522;
+    padding: 10px;
+}
+
+.slider-value, #slider-value {
+    color: white;
 }
